@@ -1,0 +1,38 @@
+<table [hover]="true" [striped]="true" cTable>
+    <thead>
+        <tr>
+            <th class="text-capitalize" scope="col" *ngFor="let item of tableColumns">{{ item }}</th>
+            <!-- <th scope="col">Class</th>
+            <th scope="col">Heading</th>
+            <th scope="col">Heading</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data; let i = index">
+            <th>{{ i+1 }}</th>
+            <th>{{ item.std_id }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.father_name }}</td>
+            <td>{{ item.mother_name }}</td>
+            <td>{{ item.course }}</td>
+            <td><span
+                    class="text-white badge rounded-pill text-bg-{{ item.status == 'Pending' ? 'info' : (item.status == 'Accepted' ? 'success' : 'danger')  }}">{{
+                    item.status }}</span></td>
+            <td>
+                <c-dropdown>
+                    <a [disabled]="item.status != 'Pending'" class="text-dark" cDropdownToggle>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                        </svg>
+                    </a>
+                    <ul cDropdownMenu>
+                        <li *ngIf="item.status == 'Pending'"><a cDropdownItem>Accept Request</a></li>
+                        <li *ngIf="item.status == 'Pending'"><a cDropdownItem>Reject Request</a></li>
+                    </ul>
+                </c-dropdown>
+            </td>
+        </tr>
+    </tbody>
+</table>
