@@ -16,6 +16,24 @@ export const navItems: INavData[] = [
     iconComponent: { name: 'cil-description' },
     // attributes: { target: '_blank' }
   },
+  {
+    name: 'Courses',
+    url: '/courses',
+    iconComponent: { name: 'cil-list' },
+    // attributes: { target: '_blank' }
+  },
+  {
+    name: 'Subjects',
+    url: '/subjects',
+    iconComponent: { name: 'cil-grid' },
+    // attributes: { target: '_blank' }
+  },
+  {
+    name: 'Faculties',
+    url: '/faculties',
+    iconComponent: { name: 'cil-user' },
+    // attributes: { target: '_blank' }
+  },
   // {
   //   title: true,
   //   name: 'Theme'
