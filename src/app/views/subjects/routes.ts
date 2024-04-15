@@ -6,7 +6,7 @@ export const routes: Routes = [
     path: '',
     component: SubjectsComponent,
     data: {
-      title: $localize`Faculties`
+      title: $localize`Subjects`
     }
   }
 ];
