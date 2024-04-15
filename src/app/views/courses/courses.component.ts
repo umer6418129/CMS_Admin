@@ -8,5 +8,28 @@ import { SharedModule } from '../../modules/shared/shared.module';
   styleUrl: './courses.component.scss'
 })
 export class CoursesComponent {
-
+  tableColumns : any = [
+    "#",
+    "course_name",
+    "category",
+    "is_available",
+    "action"
+  ];
+  data : any = [
+    {
+      course_name : 'Sceince',
+      is_available : false,
+      category : 'Sceince & Technology',
+    },
+    {
+      course_name : 'Medical',
+      is_available : true,
+      category : 'Sceince & Technology'
+    },
+    {
+      course_name : 'xyz',
+      is_available : true,
+      category : 'Sceince & Technology',
+    },
+  ]
 }
